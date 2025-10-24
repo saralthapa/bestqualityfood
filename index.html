@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mountain Man Bar — Best Quality Food Pvt Ltd</title>
+  <meta name="description" content="Mountain Man Bar — premium energy & snack bars. Static demo e‑commerce site." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#2b6cb0; /* deep blue */
+      --accent:#ed8936; /* orange */
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f7fafc;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg, rgba(43,108,176,0.95), rgba(237,137,54,0.95));color:white;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:8px;background:white;color:var(--brand);display:grid;place-items:center;font-weight:800}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:14px;font-weight:600}
+    main{max-width:1100px;margin:28px auto;padding:0 18px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+    .hero-card{background:var(--card);padding:28px;border-radius:14px;box-shadow:0 6px 20px rgba(12,14,20,0.06)}
+    .h-title{font-size:28px;margin:0 0 8px}
+    .h-sub{color:var(--muted);margin:0 0 18px}
+
+    /* product grid */
+    .controls{display:flex;gap:12px;align-items:center;margin:22px 0}
+    .search{flex:1;display:flex}
+    .search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6e9ef}
+    .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:30px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(11,15,24,0.05);display:flex;flex-direction:column}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .p-title{font-weight:700;margin:10px 0 6px}
+    .p-desc{font-size:13px;color:var(--muted);margin:0 0 10px}
+    .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+    .btn{background:var(--brand);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+    .btn.secondary{background:transparent;border:2px solid var(--brand);color:var(--brand)}
+
+    /* cart */
+    .cart-btn{position:relative}
+    .cart-count{position:absolute;top:-8px;right:-8px;background:var(--accent);color:white;padding:4px 8px;border-radius:999px;font-size:12px}
+    .cart-panel{position:fixed;right:20px;top:86px;width:360px;max-height:72vh;background:var(--card);padding:14px;border-radius:12px;box-shadow:0 20px 40px rgba(12,14,20,0.12);overflow:auto;display:none}
+    .cart-panel.show{display:block}
+    .cart-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px dashed #eee}
+    .cart-item img{width:64px;height:48px;object-fit:cover;border-radius:6px}
+    .cart-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0;font-weight:800}
+
+    footer{margin-top:40px;padding:20px 18px;background:transparent;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .hero-card{order:2}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">MM</div>
+      <div>
+        <div style="font-weight:800">Mountain Man Bar</div>
+        <div style="font-size:12px;opacity:.9">Best Quality Food Pvt Ltd</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="btn cart-btn" id="openCartBtn">Cart <span class="cart-count" id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h1 class="h-title">Real ingredients. Powerful energy.</h1>
+        <p class="h-sub">Mountain Man Bar makes premium energy bars and snacks designed for adventurers, athletes, and people who demand clean ingredients and great taste.</p>
+        <ul style="margin:12px 0 18px;color:var(--muted)">
+          <li>All-natural ingredients • No artificial preservatives</li>
+          <li>Gluten-free options • High-protein varieties</li>
+          <li>Packed and shipped from Nepal — crafted with care</li>
+        </ul>
+        <div style="display:flex;gap:12px">
+          <a class="btn" href="#products">Shop Now</a>
+          <a class="btn secondary" href="#about">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-card" style="text-align:center">
+        <img src="https://images.unsplash.com/photo-1515442261605-65987759f1f4?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b2b8e5a6fa5f8c69a0f7a6025c1d7ba" alt="bars" style="width:100%;height:260px;object-fit:cover;border-radius:10px;margin-bottom:12px">
+        <div style="font-weight:700">Featured: Himalayan Protein Bar</div>
+        <div style="font-size:13px;color:var(--muted)">Limited batch — almond, honey & roasted oats.</div>
+        <div style="margin-top:12px">
+          <button class="btn" onclick="addToCartId('himalayan-protein')">Add Sample to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="controls">
+        <div class="search"><input id="searchInput" placeholder="Search bars, flavors, keywords..." /></div>
+        <select id="filterCat" style="padding:10px;border-radius:10px;border:1px solid #e6e9ef">
+          <option value="all">All Categories</option>
+          <option value="energy">Energy Bars</option>
+          <option value="protein">Protein Bars</option>
+          <option value="snack">Snacks</option>
+        </select>
+      </div>
+      <div class="products" id="productsGrid"></div>
+    </section>
+
+    <section id="about" style="margin-top:20px">
+      <div class="hero-card">
+        <h2 style="margin-top:0">About Mountain Man Bar</h2>
+        <p style="color:var(--muted)">Founded to feed mountaineers and weekend warriors, Mountain Man Bar sources local Himalayan honey, nuts, and whole grains to make bars that keep you fueled. We focus on quality, sustainability, and taste.</p>
+        <p style="color:var(--muted)"><strong>Note:</strong> This is a static demo site — the cart and checkout are client-side only (no server).</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <div class="hero-card">
+        <h3 style="margin-top:0">Contact</h3>
+        <p style="color:var(--muted)">Mountain Man Bar — Best Quality Food Pvt Ltd<br>Kathmandu, Nepal</p>
+        <form onsubmit="event.preventDefault(); alert('This is a static demo. Replace with real form handling to accept messages.');">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input required placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-bottom:8px" />
+            <input required placeholder="Email" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-bottom:8px" />
+          </div>
+          <textarea required placeholder="Message" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-bottom:8px"></textarea>
+          <button class="btn" type="submit">Send (demo)</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="cart-panel" id="cartPanel">
+    <h3>Cart</h3>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <div>Total</div>
+      <div id="cartTotal">₨0.00</div>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:space-between">
+      <button class="btn" id="checkoutBtn">Checkout</button>
+      <button class="btn secondary" id="clearCartBtn">Clear</button>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Mountain Man Bar — Best Quality Food Pvt Ltd · Demo static site
+  </footer>
+
+  <script>
+    // Basic static product data
+    const PRODUCTS = [
+      {id:'himalayan-protein', title:'Himalayan Protein Bar', price:220, desc:'Almond, honey & oats — 50g', category:'protein', img:'https://images.unsplash.com/photo-1515442261605-65987759f1f4?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b2b8e5a6fa5f8c69a0f7a6025c1d7ba'},
+      {id:'trail-energy', title:'Trail Energy Bar', price:180, desc:'Dates, nuts & seeds — quick energy', category:'energy', img:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a7d9a1f7f8c6a4e9a3f2f1c2b4b5c6d'},
+      {id:'choc-boost', title:'Choco Boost', price:240, desc:'Dark chocolate & peanut butter', category:'protein', img:'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=9d8f3c4f5a6b7c8d9e0f1a2b3c4d5e6f'},
+      {id:'seed-crunch', title:'Seed Crunch', price:150, desc:'Mixed seeds, lightly salted', category:'snack', img:'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d'},
+      {id:'honey-nut', title:'Honey Nut Bar', price:200, desc:'Local Himalayan honey with roasted nuts', category:'energy', img:'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f'},
+      {id:'sampler-pack', title:'Sampler Pack (6)', price:1100, desc:'Mix of our 6 best sellers', category:'snack', img:'https://images.unsplash.com/photo-1514512376554-6f54f2b2f6b1?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e'}
+    ];
+
+    // Utilities
+    function formatPrice(n){ return '₨' + Number(n).toFixed(2) }
+    function byId(id){return document.getElementById(id)}
+
+    // Render products
+    function renderProducts(list){
+      const grid = byId('productsGrid');
+      grid.innerHTML = '';
+      list.forEach(p=>{
+        const card = document.createElement('div'); card.className='card';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.title}"/>
+          <div class="p-title">${p.title}</div>
+          <div class="p-desc">${p.desc}</div>
+          <div class="price-row">
+            <div style="font-weight:800">${formatPrice(p.price)}</div>
+            <div>
+              <button class="btn" onclick="addToCartId('${p.id}')">Add</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      })
+    }
+
+    // Search & filter
+    byId('searchInput').addEventListener('input', ()=>applyFilter());
+    byId('filterCat').addEventListener('change', ()=>applyFilter());
+    function applyFilter(){
+      const q = byId('searchInput').value.trim().toLowerCase();
+      const cat = byId('filterCat').value;
+      const filtered = PRODUCTS.filter(p=>{
+        const matchesQ = !q || (p.title+p.desc+p.category).toLowerCase().includes(q);
+        const matchesC = cat==='all' || p.category===cat;
+        return matchesQ && matchesC;
+      })
+      renderProducts(filtered);
+    }
+
+    // Simple cart stored in localStorage
+    const CART_KEY = 'mm_cart_v1';
+    function getCart(){ try{ return JSON.parse(localStorage.getItem(CART_KEY))||{} }catch(e){return{}} }
+    function saveCart(c){ localStorage.setItem(CART_KEY, JSON.stringify(c)); refreshCartUI(); }
+
+    function addToCartId(id){ const p = PRODUCTS.find(x=>x.id===id); if(!p) return; const c = getCart(); c[id] = (c[id]||0)+1; saveCart(c); }
+    function removeFromCartId(id){ const c = getCart(); if(!c[id]) return; delete c[id]; saveCart(c); }
+    function changeQty(id, qty){ const c = getCart(); if(qty<=0){ delete c[id] } else c[id]=qty; saveCart(c); }
+    function clearCart(){ localStorage.removeItem(CART_KEY); refreshCartUI(); }
+
+    function refreshCartUI(){
+      const c = getCart();
+      const keys = Object.keys(c);
+      byId('cartCount').textContent = keys.reduce((s,k)=>s+c[k],0);
+      const itemsDiv = byId('cartItems'); itemsDiv.innerHTML='';
+      let total=0;
+      keys.forEach(id=>{
+        const qty = c[id];
+        const p = PRODUCTS.find(x=>x.id===id); if(!p) return;
+        total += p.price * qty;
+        const item = document.createElement('div'); item.className='cart-item';
+        item.innerHTML = `
+          <img src="${p.img}" alt="${p.title}" />
+          <div style="flex:1">
+            <div style="font-weight:700">${p.title}</div>
+            <div style="font-size:13px;color:var(--muted)">${formatPrice(p.price)} × ${qty}</div>
+            <div style="margin-top:8px">
+              <button class="btn secondary" onclick="changeQty('${id}', ${Math.max(0, qty-1)})">-</button>
+              <button class="btn" style="margin-left:8px" onclick="changeQty('${id}', ${qty+1})">+</button>
+              <button class="btn secondary" style="margin-left:8px" onclick="removeFromCartId('${id}')">Remove</button>
+            </div>
+          </div>
+        `;
+        itemsDiv.appendChild(item);
+      })
+      byId('cartTotal').textContent = formatPrice(total);
+    }
+
+    // Cart panel toggle
+    const cartPanel = byId('cartPanel');
+    byId('openCartBtn').addEventListener('click', ()=>{ cartPanel.classList.toggle('show'); refreshCartUI(); })
+    byId('clearCartBtn').addEventListener('click', ()=>{ if(confirm('Clear cart?')) clearCart(); })
+
+    // Checkout (static demo)
+    byId('checkoutBtn').addEventListener('click', ()=>{
+      const c = getCart(); if(Object.keys(c).length===0){ alert('Cart empty'); return; }
+      // In a real site you'd send this to a server or payment gateway
+      alert('Checkout demo: this is a static site. Integrate a payment provider or server to complete orders.');
+    })
+
+    // init
+    document.addEventListener('DOMContentLoaded', ()=>{
+      applyFilter(); refreshCartUI(); byId('year').textContent = new Date().getFullYear();
+    })
+
+    // expose functions (so inline onclick works)
+    window.addToCartId = addToCartId;
+    window.changeQty = changeQty;
+    window.removeFromCartId = removeFromCartId;
+  </script>
+</body>
+</html>
